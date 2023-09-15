@@ -1,7 +1,8 @@
 clear all
 
-file_names = {'backstepping','mpc'};
+unzip('results.zip','./results');
 
+file_names = {'mpc','backstepping','slidingmode'};
 
 fig1 = figure('Name','Tracking Results','Position',[700 250 900 600]);
 tiledlayout(3,1,'Padding','none');

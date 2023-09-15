@@ -1,6 +1,8 @@
 clear all
 
-file_name = 'mpc';
+unzip('results.zip','./results');
+
+file_name = 'slidingmode';
 
 source = readmatrix(['./results/',file_name,'.csv']);
 
