@@ -2,7 +2,7 @@ clear all
 
 unzip('results.zip','./results');
 
-file_name = 'slidingmode';
+file_name = '2023_09_27_21_09';
 
 source = readmatrix(['./results/',file_name,'.csv']);
 
@@ -34,7 +34,6 @@ plot(time,x,'Color',[0 0.4470 0.7410],'LineWidth',2);
 hold on
 plot(time,ref_x,'Color','k','LineStyle','--','LineWidth',2);
 legend(file_name,'Reference','Location','northoutside','Orientation','horizontal');
-xlim([0 30]);
 ylabel('X Position [m]');
 set(gca,'FontSize',17,'LineWidth',1.5);
 nexttile
@@ -42,14 +41,12 @@ plot(time,y,'Color',[0 0.4470 0.7410],'LineWidth',2);
 hold on
 plot(time,ref_y,'Color','k','LineStyle','--','LineWidth',2);
 ylabel('Y Position [m]');
-xlim([0 30]);
 set(gca,'FontSize',17,'LineWidth',1.5);
 nexttile
 plot(time,z,'Color',[0 0.4470 0.7410],'LineWidth',2);
 hold on
 plot(time,ref_z,'Color','k','LineStyle','--','LineWidth',2);
 ylabel('Z Position [m]');
-xlim([0 30]);
 set(gca,'FontSize',17,'LineWidth',1.5);
 
 fig2 = figure('Name','Velocity Tracking Results','Position',[700 250 900 600]);
@@ -60,21 +57,18 @@ hold on
 plot(time,ref_u,'Color','k','LineStyle','--','LineWidth',2);
 legend(file_name,'Reference','Location','northoutside','Orientation','horizontal');
 ylabel('X Velocity [m/s]');
-xlim([0 30]);
 set(gca,'FontSize',17,'LineWidth',1.5);
 nexttile
 plot(time,v,'Color',[0 0.4470 0.7410],'LineWidth',2);
 hold on
 plot(time,ref_v,'Color','k','LineStyle','--','LineWidth',2);
 ylabel('Y Velocity [m/s]');
-xlim([0 30]);
 set(gca,'FontSize',17,'LineWidth',1.5);
 nexttile
 plot(time,w,'Color',[0 0.4470 0.7410],'LineWidth',2);
 hold on
 plot(time,ref_w,'Color','k','LineStyle','--','LineWidth',2);
 ylabel('Z Velocity [m/s]');
-xlim([0 30]);
 set(gca,'FontSize',17,'LineWidth',1.5);
 
 fig3 = figure('Name','Attitude Tracking Results','Position',[700 250 900 600]);
@@ -85,21 +79,18 @@ hold on
 plot(time,ref_phi,'Color','k','LineStyle','--','LineWidth',2);
 legend(file_name,'Reference','Location','northoutside','Orientation','horizontal');
 ylabel('Phi Angle [deg]');
-xlim([0 30]);
 set(gca,'FontSize',17,'LineWidth',1.5);
 nexttile
 plot(time,theta,'Color',[0 0.4470 0.7410],'LineWidth',2);
 hold on
 plot(time,ref_theta,'Color','k','LineStyle','--','LineWidth',2);
 ylabel('Theta Angle [deg]');
-xlim([0 30]);
 set(gca,'FontSize',17,'LineWidth',1.5);
 nexttile
 plot(time,psi,'Color',[0 0.4470 0.7410],'LineWidth',2);
 hold on
 plot(time,ref_psi,'Color','k','LineStyle','--','LineWidth',2);
 ylabel('Psi Angle [deg]');
-xlim([0 30]);
 set(gca,'FontSize',17,'LineWidth',1.5);
 
 % saveas(fig1,'position_tracking_results.png');

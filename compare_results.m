@@ -2,7 +2,7 @@ clear all
 
 unzip('results.zip','./results');
 
-file_names = {'mpc','backstepping','slidingmode'};
+file_names = {'2023_09_24_14_24','2023_09_24_14_35'};
 
 fig1 = figure('Name','Tracking Results','Position',[700 250 900 600]);
 tiledlayout(3,1,'Padding','none');
@@ -30,31 +30,31 @@ function plot_figure(file_name,i)
         ref_z = source(:,6);
         ax = nexttile(1);
         plot(time,ref_x,'Color','k','LineStyle','--','LineWidth',2);
+        xlim([0 time(end)]);
         hold on
         ax = nexttile(2);
         plot(time,ref_y,'Color','k','LineStyle','--','LineWidth',2);
+        xlim([0 time(end)]);
         hold on
         ax = nexttile(3);
         plot(time,ref_z,'Color','k','LineStyle','--','LineWidth',2);
+        xlim([0 time(end)]);
         hold on
     end
     
     ax = nexttile(1);
     plot(time,x,'Color',color_selections(i,:),'LineWidth',2);
     hold on
-    xlim([0 30]);
     ylabel('X Position [m]');
     set(gca,'FontSize',17,'LineWidth',1.5);
     ax = nexttile(2);
     plot(time,y,'Color',color_selections(i,:),'LineWidth',2);
     hold on
-    xlim([0 30]);
     ylabel('Y Position [m]');
     set(gca,'FontSize',17,'LineWidth',1.5);
     ax = nexttile(3);
     plot(time,z,'Color',color_selections(i,:),'LineWidth',2);
     hold on
-    xlim([0 30]);
     ylabel('Z Position [m]');
     set(gca,'FontSize',17,'LineWidth',1.5);
         
